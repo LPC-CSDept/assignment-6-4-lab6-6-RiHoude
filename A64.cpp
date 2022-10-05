@@ -15,21 +15,44 @@ using namespace std;
 //----------
 // Make a line for Function Prototype for getListprime Here
 //----------
+void getListprime(int begin, int end);
 
 int main()
 {
 	int begin, end;
+	int i, p;
 	cout << "Enter your input (two integer for range ) \n";
 	cin >> begin >> end;
-	if (begin < end)
+	if (begin < end){
 		getListprime(begin, end);
-	else if (begin > end)
-		getListprime();
-	else
-		getListprime(begin);
+	}
+	else if (begin > end) {
+		begin = 0;
+		end = 100;
+		getListprime(begin, end);
+	}
+	else {
+		begin = 20;
+		end = 100;
+		getListprime(begin, end);
+	}
 }
+
+
 void getListprime(int begin, int end)
 {
-
-	// Complete this function
+	int i, p;
+	for (p = begin; p <= end; p++) {
+    	if (p == 0 || p == 1) {
+    		continue;
+		}
+	}
+    for (i = 2; i <= (p / 2); i++) {
+    	if (p % i == 0) {
+    		break;
+		}
+    if (i > (p / 2)) {
+    	cout << " Prime number : " << p << endl;
+		}
+	}
 }
